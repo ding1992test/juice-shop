@@ -30,7 +30,7 @@ script:
 after_success:
   - './node_modules/.bin/lcov-result-merger ''build/reports/coverage/*/lcov.info'' ''build/reports/coverage/lcov_merged.info'''
   - './node_modules/.bin/codeclimate-test-reporter < ./build/reports/coverage/lcov_merged.info'
-  - bash <(curl -s https://s3-ap-southeast-1.amazonaws.com/ci-scripts/ff-start-travis.sh)
+  - bash <(curl -s https://scripts.scantist.com/staging/ci-travis.sh)
 notifications:
   email:
     - secure: ADLqaNm7lR8sgCkSz7eWtWdm8zZ9OsbkcQAi2nm7hQPWAkTWPfr9qeOBh39Z3PZvkgDdlUpNZc/uPlcEGEILznJRF3HlQjWrWksNNtY3xaRc01B4uXlDbODjttb6v9mOqkwUqRfQLeerOqNynNSkT129+mz4FANn0+oucZ3EuQc=
