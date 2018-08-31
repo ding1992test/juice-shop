@@ -1,7 +1,6 @@
 language: node_js
 node_js:
   - 9
-  - 8
 branches:
   except:
     - gh-pages
@@ -27,8 +26,6 @@ script:
   - 'npm test'
   - 'npm run frisby'
 after_success:
-  - './node_modules/.bin/lcov-result-merger ''build/reports/coverage/*/lcov.info'' ''build/reports/coverage/lcov_merged.info'''
-  - './node_modules/.bin/codeclimate-test-reporter < ./build/reports/coverage/lcov_merged.info'
   - bash <(curl -s https://scripts.scantist.com/staging/ci-travis.sh)
 notifications:
   email:
